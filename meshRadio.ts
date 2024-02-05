@@ -33,22 +33,22 @@ namespace meshRadio {
     // Serial number defaults to 0 unless enabled by user
 
     // payload: number (9 ... 12)
-    export const PACKET_TYPE_NUMBER = 0;
+    export const MESH_PACKET_TYPE_NUMBER = 0;
     // payload: number (9 ... 12), name length (13), name (14 ... 26)
-    export const PACKET_TYPE_VALUE = 1;
+    export const MESH_PACKET_TYPE_VALUE = 1;
     // payload: string length (9), string (10 ... 28)
-    export const PACKET_TYPE_STRING = 2;
+    export const MESH_PACKET_TYPE_STRING = 2;
     // payload: buffer length (9), buffer (10 ... 28)
-    export const PACKET_TYPE_BUFFER = 3;
+    export const MESH_PACKET_TYPE_BUFFER = 3;
     // payload: number (9 ... 16)
-    export const PACKET_TYPE_DOUBLE = 4;
+    export const MESH_PACKET_TYPE_DOUBLE = 4;
     // payload: number (9 ... 16), name length (17), name (18 ... 26)
-    export const PACKET_TYPE_DOUBLE_VALUE = 5;
+    export const MESH_PACKET_TYPE_DOUBLE_VALUE = 5;
 
     let transmittingSerial: boolean;
     let initialized = false;
 
-    export let lastPacket: RadioPacket;
+    export let lastPacket: MeshRadioPacket;
     let onReceivedNumberHandler: (receivedNumber: number) => void;
     let onReceivedValueHandler: (name: string, value: number) => void;
     let onReceivedStringHandler: (receivedString: string) => void;
@@ -63,7 +63,7 @@ namespace meshRadio {
     function handleDataReceived() {
         let buffer: Buffer = readRawPacket();
         while (buffer) {
-            lastPacket = RadioPacket.getPacket(buffer);
+            lastPacket = MeshRadioPacket.getPacket(buffer);
             switch (lastPacket.packetType) {
                 case PACKET_TYPE_NUMBER:
                 case PACKET_TYPE_DOUBLE:
@@ -190,7 +190,7 @@ namespace meshRadio {
             return this.data.getNumber(NumberFormat.Int32LE, this.data.length - 4);
         }
 
-        get packetType() {
+        get meshPacketType() {
             return this.data[0];
         }
 
