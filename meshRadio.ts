@@ -93,7 +93,7 @@ namespace meshRadio {
      * Registers code to run when the radio receives a number.
      */
     //% help=radio/on-received-number
-    //% blockId=radio_on_number_drag block="on radio received" blockGap=16
+    //% blockId=meshradio_on_number_drag block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     //% group="Receive"
     //% weight=20
@@ -106,7 +106,7 @@ namespace meshRadio {
      * Registers code to run when the radio receives a key value pair.
      */
     //% help=radio/on-received-value
-    //% blockId=radio_on_value_drag block="on radio received" blockGap=16
+    //% blockId=meshradio_on_value_drag block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     //% group="Receive"
     //% weight=19
@@ -119,7 +119,7 @@ namespace meshRadio {
      * Registers code to run when the radio receives a string.
      */
     //% help=radio/on-received-string
-    //% blockId=radio_on_string_drag block="on radio received" blockGap=16
+    //% blockId=meshradio_on_string_drag block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     //% group="Receive"
     //% weight=18
@@ -132,7 +132,7 @@ namespace meshRadio {
      * Registers code to run when the radio receives a buffer.
      */
     //% help=radio/on-received-buffer blockHidden=1
-    //% blockId=radio_on_buffer_drag block="on radio received" blockGap=16
+    //% blockId=meshradio_on_buffer_drag block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
         init();
@@ -145,7 +145,7 @@ namespace meshRadio {
      */
     //% help=radio/received-packet
     //% blockGap=8
-    //% blockId=radio_received_packet block="received packet %type=radio_packet_property" blockGap=16
+    //% blockId=meshradio_received_packet block="received packet %type=radio_packet_property" blockGap=16
     //% group="Receive"
     //% weight=16
     export function receivedPacket(type: number) {
@@ -163,7 +163,7 @@ namespace meshRadio {
      * Gets a packet property.
      * @param type the packet property type, eg: PacketProperty.time
      */
-    //% blockId=radio_packet_property block="%note"
+    //% blockId=meshradio_packet_property block="%note"
     //% shim=TD_ID blockHidden=1
     export function _packetProperty(type: MeshRadioPacketProperty): number {
         return type;
@@ -279,7 +279,7 @@ namespace meshRadio {
      */
     //% help=radio/send-number
     //% weight=60
-    //% blockId=radio_datagram_send block="radio send number %value" blockGap=8
+    //% blockId=meshradio_datagram_send block="radio send number %value" blockGap=8
     //% group="Send"
     export function sendNumber(value: number) {
         let meshPacket: MeshRadioPacket;
@@ -304,7 +304,7 @@ namespace meshRadio {
     */
     //% help=radio/send-value
     //% weight=59
-    //% blockId=radio_datagram_send_value block="radio send|value %name|= %value" blockGap=8
+    //% blockId=meshradio_datagram_send_value block="radio send|value %name|= %value" blockGap=8
     //% group="Send"
     export function sendValue(name: string, value: number) {
         let meshPacket: MeshRadioPacket;
@@ -327,7 +327,7 @@ namespace meshRadio {
      */
     //% help=radio/send-string
     //% weight=58
-    //% blockId=radio_datagram_send_string block="radio send string %msg"
+    //% blockId=meshradio_datagram_send_string block="radio send string %msg"
     //% msg.shadowOptions.toString=true
     //% group="Send"
     export function sendString(value: string) {
@@ -355,7 +355,7 @@ namespace meshRadio {
     */
     //% help=radio/set-transmit-serial-number
     //% weight=8 blockGap=8
-    //% blockId=radio_set_transmit_serial_number block="radio set transmit serial number %transmit"
+    //% blockId=meshradio_set_transmit_serial_number block="radio set transmit serial number %transmit"
     //% advanced=true
     export function setTransmitSerialNumber(transmit: boolean) {
         transmittingSerial = transmit;
