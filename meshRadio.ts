@@ -94,7 +94,7 @@ namespace meshRadio {
      */
     //% help=radio/on-received-number
     //% blockId=meshradio_on_number_drag block="on radio received" blockGap=16
-    //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
+    //% useLoc="meshradio.onDataPacketReceived" draggableParameters=reporter
     //% group="Receive"
     //% weight=20
     export function onReceivedNumber(cb: (receivedNumber: number) => void) {
@@ -107,7 +107,7 @@ namespace meshRadio {
      */
     //% help=radio/on-received-value
     //% blockId=meshradio_on_value_drag block="on radio received" blockGap=16
-    //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
+    //% useLoc="meshradio.onDataPacketReceived" draggableParameters=reporter
     //% group="Receive"
     //% weight=19
     export function onReceivedValue(cb: (name: string, value: number) => void) {
@@ -120,7 +120,7 @@ namespace meshRadio {
      */
     //% help=radio/on-received-string
     //% blockId=meshradio_on_string_drag block="on radio received" blockGap=16
-    //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
+    //% useLoc="meshradio.onDataPacketReceived" draggableParameters=reporter
     //% group="Receive"
     //% weight=18
     export function onReceivedString(cb: (receivedString: string) => void) {
@@ -133,7 +133,7 @@ namespace meshRadio {
      */
     //% help=radio/on-received-buffer blockHidden=1
     //% blockId=meshradio_on_buffer_drag block="on radio received" blockGap=16
-    //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
+    //% useLoc="meshradio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
         init();
         onReceivedBufferHandler = cb;
