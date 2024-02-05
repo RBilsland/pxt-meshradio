@@ -5,7 +5,7 @@
     "license": "MIT",
     "dependencies": {
         "core": "*"
-    }
+    },
     "files": [
         "README.md",
         "meshRadio.ts",
@@ -16,5 +16,5 @@
     "testFiles": [
         "tests.ts"
     ],
-    "public": true,
+    "public": true
 }
