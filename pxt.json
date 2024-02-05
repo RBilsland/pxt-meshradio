@@ -1,57 +1,20 @@
 {
     "name": "meshRadio",
+    "version": "0.0.1",
     "description": "The mesh radio services",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    }
     "files": [
         "README.md",
-        "shims.d.ts",
-        "enums.d.ts",
-        "meshRadio.cpp",
         "meshRadio.ts",
-        "targetoverrides.ts"
+        "meshRadio.cpp",
+        "shims.d.ts",
+        "enums.d.ts"
+    ],
+    "testFiles": [
+        "tests.ts"
     ],
     "public": true,
-    "dependencies": {
-        "core": "file:../core"
-    }
-}
-
-{
-  "name": "pxt-meshRadio",
-  "version": "0.0.1",
-  "description": "Mesh Radio",
-  "keywords": [
-    "JavaScript",
-    "education",
-    "PXT",
-    "Mesh",
-    "Radio"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Microsoft/pxt-sample.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "homepage": "https://github.com/Microsoft/pxt-sample#readme",
-  "files": [
-    "README.md",
-    "pxtarget.json",
-    "targetconfig.json",
-    "built/*.js",
-    "built/*.json",
-    "built/*.d.ts",
-    "sim/public",
-    "docs/**"
-  ],
-  "devDependencies": {
-    "typescript": "^4.2.3",
-    "semantic-ui-less": "2.4.1",
-    "@types/jquery": "3.3.29",
-    "@types/marked": "0.3.0",
-    "@types/node": "^9.3.0",
-    "@types/web-bluetooth": "0.0.4"
-  },
-  "dependencies": {
-    "pxt-core": "7.4.21"
-  }
 }
