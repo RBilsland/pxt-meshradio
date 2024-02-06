@@ -8,7 +8,7 @@ declare namespace meshRadio {
     /**
      * Sends an event over radio to neighbouring devices
      */
-    //% blockId=radioRaiseEvent block="radio raise event|from source %src=control_event_source_id|with value %value=control_event_value_id"
+    //% blockId=meshradioRaiseEvent block="radio raise event|from source %src=control_event_source_id|with value %value=control_event_value_id"
     //% blockExternalInputs=1
     //% advanced=true
     //% weight=1
@@ -33,7 +33,7 @@ declare namespace meshRadio {
      */
     //% help=radio/on-data-received
     //% weight=0
-    //% blockId=radio_datagram_received_event block="radio on data received" blockGap=8
+    //% blockId=meshradio_datagram_received_event block="radio on data received" blockGap=8
     //% deprecated=true blockHidden=1 shim=radio::onDataReceived
     function onDataReceived(body: () => void): void;
 
@@ -43,7 +43,7 @@ declare namespace meshRadio {
      */
     //% help=radio/set-group
     //% weight=100
-    //% blockId=radio_set_group block="radio set group %ID"
+    //% blockId=meshradio_set_group block="radio set group %ID"
     //% id.min=0 id.max=255 shim=radio::setGroup
     function setGroup(id: int32): void;
 
@@ -53,7 +53,7 @@ declare namespace meshRadio {
      */
     //% help=radio/set-transmit-power
     //% weight=9 blockGap=8
-    //% blockId=radio_set_transmit_power block="radio set transmit power %power"
+    //% blockId=meshradio_set_transmit_power block="radio set transmit power %power"
     //% power.min=0 power.max=7
     //% advanced=true shim=radio::setTransmitPower
     function setTransmitPower(power: int32): void;
@@ -64,7 +64,7 @@ declare namespace meshRadio {
      **/
     //% help=radio/set-frequency-band
     //% weight=8 blockGap=8
-    //% blockId=radio_set_frequency_band block="radio set frequency band %band"
+    //% blockId=meshradio_set_frequency_band block="radio set frequency band %band"
     //% band.min=0 band.max=83
     //% advanced=true shim=radio::setFrequencyBand
     function setFrequencyBand(band: int32): void;
