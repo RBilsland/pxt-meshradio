@@ -48,7 +48,7 @@ using namespace pxt;
 namespace meshRadio {
     
 #if CODAL_RADIO_MICROBIT_DAL
-    CODAL_RADIO* getRadio() {
+    CODAL_RADIO* getMeshRadio() {
         return &uBit.radio;
     }
 #elif defined(CODAL_RADIO)
