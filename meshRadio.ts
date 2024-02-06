@@ -1,4 +1,3 @@
-
 enum MeshRadioPacketProperty {
     //% blockIdentity=meshRadio._packetProperty
     //% block="signal strength"
@@ -64,22 +63,22 @@ namespace meshRadio {
         let buffer: Buffer = readRawPacket();
         while (buffer) {
             lastPacket = MeshRadioPacket.getPacket(buffer);
-            switch (lastPacket.packetType) {
-                case PACKET_TYPE_NUMBER:
-                case PACKET_TYPE_DOUBLE:
+            switch (lastPacket.meshPacketType) {
+                case MESH_PACKET_TYPE_NUMBER:
+                case MESH_PACKET_TYPE_DOUBLE:
                     if (onReceivedNumberHandler)
                         onReceivedNumberHandler(lastPacket.numberPayload);
                     break;
-                case PACKET_TYPE_VALUE:
-                case PACKET_TYPE_DOUBLE_VALUE:
+                case MESH_PACKET_TYPE_VALUE:
+                case MESH_PACKET_TYPE_DOUBLE_VALUE:
                     if (onReceivedValueHandler)
                         onReceivedValueHandler(lastPacket.stringPayload, lastPacket.numberPayload);
                     break;
-                case PACKET_TYPE_BUFFER:
+                case MESH_PACKET_TYPE_BUFFER:
                     if (onReceivedBufferHandler)
                         onReceivedBufferHandler(lastPacket.bufferPayload);
                     break;
-                case PACKET_TYPE_STRING:
+                case MESH_PACKET_TYPE_STRING:
                     if (onReceivedStringHandler)
                         onReceivedStringHandler(lastPacket.stringPayload);
                     break;
@@ -382,11 +381,11 @@ namespace meshRadio {
     function getStringOffset(meshPacketType: number) {
         switch (meshPacketType) {
             case MESH_PACKET_TYPE_STRING:
-                return MESH_PACKET_PREFIX_LENGTH;
+                return PACKET_PREFIX_LENGTH;
             case MESH_PACKET_TYPE_VALUE:
-                return VALUE_MESH_PACKET_NAME_LEN_OFFSET;
+                return VALUE_PACKET_NAME_LEN_OFFSET;
             case MESH_PACKET_TYPE_DOUBLE_VALUE:
-                return DOUBLE_VALUE_MESH_PACKET_NAME_LEN_OFFSET;
+                return DOUBLE_VALUE_PACKET_NAME_LEN_OFFSET;
             default:
                 return undefined;
         }
