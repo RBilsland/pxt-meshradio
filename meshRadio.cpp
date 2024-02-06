@@ -21,7 +21,7 @@
 using namespace pxt;
 
 #ifndef MICROBIT_RADIO_MAX_PACKET_SIZE
-#define MICROBIT_RADIO_MAX_PACKET_SIZE          32
+#define MICROBIT_RADIO_MAX_PACKET_SIZE          64
 #endif
 
 #ifndef DEVICE_RADIO_MAX_PACKET_SIZE
