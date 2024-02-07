@@ -76,8 +76,8 @@ CODAL_RADIO* getMeshRadio() {
     bool init = false;
     int meshRadioEnable() {
 #ifdef CODAL_RADIO
-        auto radio = getMeshRadio();
-        if (NULL == radio) 
+        auto meshRadio = getMeshRadio();
+        if (NULL == meshRadio) 
             return DEVICE_NOT_SUPPORTED;
 
         if (init && !meshRadioEnabled) {
@@ -110,8 +110,8 @@ CODAL_RADIO* getMeshRadio() {
     //% help=radio/off
     void off() {
 #ifdef CODAL_RADIO
-        auto radio = getMeshRadio();
-        if (NULL == radio)
+        auto meshRadio = getMeshRadio();
+        if (NULL == meshRadio)
             return;
 
         int r = meshRadio->disable();
