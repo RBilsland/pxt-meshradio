@@ -17,7 +17,7 @@ enum MeshRadioPacketProperty {
 namespace meshRadio {
 
     // keep in sync with CODAL
-    const RADIO_MAX_PACKET_SIZE = 32;
+    const RADIO_MAX_PACKET_SIZE = 64;
     const MAX_FIELD_DOUBLE_NAME_LENGTH = 8;
     const MAX_PAYLOAD_LENGTH = 20;
     const PACKET_PREFIX_LENGTH = 9;
