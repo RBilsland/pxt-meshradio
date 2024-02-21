@@ -19,7 +19,7 @@ namespace meshRadio {
     // keep in sync with CODAL
     const RADIO_MAX_PACKET_SIZE = 64;
     const MAX_FIELD_DOUBLE_NAME_LENGTH = 8;
-    const MAX_PAYLOAD_LENGTH = 20;
+    const MAX_PAYLOAD_LENGTH = 52;
     const PACKET_PREFIX_LENGTH = 9;
     const VALUE_PACKET_NAME_LEN_OFFSET = 13;
     const DOUBLE_VALUE_PACKET_NAME_LEN_OFFSET = 17;
